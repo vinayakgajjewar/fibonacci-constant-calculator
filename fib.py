@@ -1,3 +1,7 @@
+# For printing to n decimal places
+import decimal
+decimal.getcontext().prec = 150
+
 def calc_fib_constant(n, iter):
 	# Here, n is the order of the Fibonacci sequence
 	# n=2 corresponds to the classic Fibonacci sequence
@@ -20,19 +24,25 @@ def calc_fib_constant(n, iter):
 	# TODO: Generalize this for n != 2
 	for i in range(iter - 3):
 
-		print("i: " + str(i))
+		# print("i: " + str(i))
 
 		a = fib_nums[len(fib_nums) - 1]
-		print("a: " + str(a))
+		# print("a: " + str(a))
 
 		b = fib_nums[len(fib_nums) - 2]
-		print("b: " + str(b))
+		# print("b: " + str(b))
 
 		next_num = a + b
-		print("next_num: " + str(next_num))
+		# print("next_num: " + str(next_num))
 		fib_nums.append(next_num)
 
-	print(fib_nums)
+	# print(fib_nums)
+
+	r = decimal.Decimal(fib_nums[len(fib_nums) - 1]) / decimal.Decimal(fib_nums[len(fib_nums) - 2])
+	print(r)
 
 # Regular old Fibonacci sequence
 calc_fib_constant(2, 10)
+calc_fib_constant(2, 100)
+calc_fib_constant(2, 1000)
+calc_fib_constant(2, 10000)
