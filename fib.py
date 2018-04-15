@@ -31,18 +31,25 @@ def calc_fib_constant(n, count):
 
 		temp_list[1] = fib_nums[len(fib_nums) - 2]
 
+		for i in range(n):
+			temp_list[i] = fib_nums[len(fib_nums) - (i + 1)]
+
 		next_num = sum(temp_list)
 		# print("next_num: " + str(next_num))
 		fib_nums.append(next_num)
 
-	print(fib_nums)
+	# Uncomment for debug purposes
+	# print(fib_nums)
 
 	r = decimal.Decimal(fib_nums[len(fib_nums) - 1]) / decimal.Decimal(fib_nums[len(fib_nums) - 2])
 	print(r)
 
 # Regular old Fibonacci sequence
-calc_fib_constant(2, 10)
+calc_fib_constant(2, 10000)
 # calc_fib_constant(2, 100)
 # calc_fib_constant(2, 1000)
 # calc_fib_constant(2, 10000)
 # calc_fib_constant(2, 100000)
+
+# Tribonacci!
+calc_fib_constant(3, 10000)
