@@ -8,7 +8,10 @@ def calc_fib_constant(n, count):
 	# count is the number of Fibonacci numbers to generate
 	# TODO: Make it work for n != 2
 
-	temp_list = [0, 0]
+	# Generalized for n != 2
+	temp_list = []
+	for i in range(n):
+		temp_list.append(0)
 
 	# The list holding the Fib numbers
 	fib_nums = []
