@@ -8,17 +8,15 @@ def calc_fib_constant(n, count):
 	# count is the number of Fibonacci numbers to generate
 	# TODO: Make it work for n != 2
 
-	# Starting numbers
-	a = 0
-	b = 1
+	temp_list = [0, 0]
 
 	# The list holding the Fib numbers
 	fib_nums = []
 
 	# Populate the list with init values
 	for i in range(n - 1):
-		fib_nums.append(a)
-	fib_nums.append(b)
+		fib_nums.append(0)
+	fib_nums.append(1)
 
 	# Now to calculate the rest of the sequence
 	# TODO: Generalize this for n != 2
@@ -26,13 +24,11 @@ def calc_fib_constant(n, count):
 
 		# print("i: " + str(i))
 
-		a = fib_nums[len(fib_nums) - 1]
-		# print("a: " + str(a))
+		temp_list[0] = fib_nums[len(fib_nums) - 1]
 
-		b = fib_nums[len(fib_nums) - 2]
-		# print("b: " + str(b))
+		temp_list[1] = fib_nums[len(fib_nums) - 2]
 
-		next_num = a + b
+		next_num = temp_list[0] + temp_list[1]
 		# print("next_num: " + str(next_num))
 		fib_nums.append(next_num)
 
