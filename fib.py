@@ -31,7 +31,7 @@ def calc_fib_constant(n, count):
 
 		temp_list[1] = fib_nums[len(fib_nums) - 2]
 
-		next_num = temp_list[0] + temp_list[1]
+		next_num = sum(temp_list)
 		# print("next_num: " + str(next_num))
 		fib_nums.append(next_num)
 
